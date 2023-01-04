@@ -23,7 +23,7 @@ Installation
 
     Clone the repository:
 
-git clone https://github.com/YOUR_USERNAME/news-website.git
+git clone https://github.com/AIVAN22/news-website.git
 
     Navigate to the project directory:
 
