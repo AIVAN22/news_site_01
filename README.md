@@ -1,5 +1,3 @@
-README.md
-
 Welcome to my news website! This website allows you to view the latest news in various categories such as business, health, technology, sports, and science. You can also view individual articles by clicking on a news headline.
 
 If you have any feedback or suggestions, please don't hesitate to contact me.
