@@ -46,6 +46,6 @@ python manage.py runserver
     Open the website in your browser at http://127.0.0.1:8000/.
     You can log in to the admin panel at http://127.0.0.1:8000/admin/.
     
-    Note
+
 
 This project is for educational purposes only and is not intended for production use.
