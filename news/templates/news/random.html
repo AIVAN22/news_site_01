@@ -1,0 +1,87 @@
+{% extends 'news/main.html' %} {% block content %} {% load static %}
+
+<style>
+	body {
+		background: darkgray;
+	}
+	h3 {
+		margin: 50px 0 0 50px;
+	}
+
+	.a_0 {
+		margin: 50px 0 0 50px;
+	}
+	.a_1 {
+		margin: 50px 0 0 50px;
+	}
+	.a_2 {
+		margin: 50px 0 0 50px;
+	}
+	.a_3 {
+		margin: 50px 0 0 50px;
+	}
+	.a_4 {
+		margin: 50px 0 0 50px;
+	}
+	.news {
+		margin-top: 550px;
+	}
+	.img{
+		margin:0px;
+		weight:1510px;
+		height:700px;
+	}
+</style>
+<body>
+	<img style="weight: 1500px; height: 709px" class='img' src="{% static 'images/SITE_NEWS.jpg' %}">
+	
+	<div class="news">
+		<h3>{{ last_business_news.title|slice:':30' }}...</h3>
+		<a class="a_0" href="{% url 'article' news_id=last_business_news.id %}"
+			>{{ last_business_news.content|slice:':150' }}...</a
+		>
+		<img
+			style="weight: 250px; height: 150px"
+			src="{% static 'business_images/'|add:last_business_news.custom_filename|add:'.jpg' %}"
+		/>
+
+		<h3>{{ last_health_news|slice:':30' }}...</h3>
+		<a class="a_1" href="{% url 'article_health' news_id=last_health_news.id %}"
+			>{{ last_health_news.content|slice:':150' }}...</a
+		>
+		<img
+			style="weight: 250px; height: 150px"
+			src="{% static 'health_images/'|add:last_health_news.custom_filename|add:'.jpg' %}"
+		/>
+
+		<h3>{{ last_tech_news|slice:':0' }}...</h3>
+		<a class="a_2" href="{% url 'article_tech' news_id=last_tech_news.id %}"
+			>{{ last_tech_news.content|slice:':147'}}...</a
+		>
+		<img
+			style="weight: 250px; height: 150px"
+			src="{% static 'tech_images/'|add:last_tech_news.custom_filename|add:'.jpg' %}"
+		/>
+
+		<h3>{{ last_sport_news|slice:':30' }}...</h3>
+		<a class="a_3" href="{% url 'article_sport' news_id=last_health_news.id %}"
+			>{{ last_sport_news.content|slice:':150' }}...</a
+		>
+		<img
+			style="weight: 250px; height: 150px"
+			src="{% static 'sport_images/'|add:last_sport_news.custom_filename|add:'.jpg' %}"
+		/>
+
+		<h3>{{ last_science_news|slice:':30' }}...</h3>
+		<a
+			class="a_4"
+			href="{% url 'article_science' news_id=last_science_news.id %}"
+			>{{ last_science_news.content|slice:':150' }}...</a
+		>
+		<img
+			style="weight: 250px; height: 150px"
+			src="{% static 'science_images/'|add:last_science_news.custom_filename|add:'.jpg' %}"
+		/>
+	</div>
+</body>
+{%endblock%}

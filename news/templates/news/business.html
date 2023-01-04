@@ -1,0 +1,132 @@
+{% extends 'news/main.html' %} {%block content%} {% load static %}
+
+<h1 class="hhh">BUSINESS</h1>
+<hr />
+{% for i in business_info%}
+<style>
+	.hhh {
+		margin: 0 30px;
+		color: black;
+		font-family: Ariel;
+	}
+	body {
+		padding: 0;
+		margin: 0;
+		background-color:rgba(102, 102, 102, 0.5);
+	}
+	h1 {
+		padding: 10px;
+		color: black;
+		text-align: left;
+	}
+
+	p {
+		padding: 30px;
+		text-align: cenert;
+		font-family: verdana;
+		font-size: 20px;
+	}
+
+    li{
+        list-style-type: none;
+    }
+    a{
+        color:black;
+        text-decoration: none;
+    }
+
+    a:hover {
+    color: inherit;
+    }
+	.down-content {
+		padding-right: 600px;
+		padding-left: 150px;
+	}
+
+    .title{
+        padding-left:20px;
+        display: block;
+        margin: 0;
+    }
+
+	.time {
+        margin: 0;
+        margin-top: -1em;
+        border-bottom:2px solid;
+	}
+	.inside {
+		margin: 0 50px;
+	}
+	.content-and-images {
+		margin: 50px 0;
+		display: flex;
+		flex-wrap: wrap;
+		background: lightgray;
+		border: 1px solid black;
+		border-radius: 10px;
+		font-size: 18px;
+	}
+	.content {
+		width: 60%;
+	}
+
+	.images {
+		padding: 55px;
+		width: 40%;
+		flex-wrap: wrap;
+		justify-content: space-between;
+        
+
+	}
+	
+    .Next{
+        margin-left:1430px;
+    }
+    .Previous{
+        margin-left:50px;
+    }
+	::selection {
+		background: darkgray;
+		color: black;
+	}
+
+</style>
+<div class="inside">
+	<div class="content-and-images">
+		<div class="content">
+			<h1><a class = 'title' href="{% url 'article' news_id=i.id %}">{{i.title|slice:':50'}}...<a/></h1>
+			<ul class="post-info">
+				<li class="time">{{i.time}}</li>
+			</ul>
+			<p class="para">{{ i.content|slice:':250' }}...</p>
+		</div>
+		<div class="images">
+			<img
+				src="{% static 'business_images/'|add:i.custom_filename|add:'.jpg' %}"
+				alt="A description of the
+            image"
+				style="width: 450px; height: 220px"
+			/>
+		</div>
+	</div>
+</div>
+
+{%endfor%} 
+
+<div class="pagination">
+    {% if business_info.has_previous %}
+        <a class='Previous' href="?page={{ business_info.previous_page_number }}">Previous</a>
+    {% endif %}
+    {% for page in business_info.page_range %}
+        {% if page == business_info.number %}
+            <strong>{{ page }}</strong>
+        {% else %}
+            <a href="?page={{ page }}">{{ page }}</a>
+        {% endif %}
+    {% endfor %}
+    {% if business_info.has_next %}
+        <a class='Next' href="?page={{ business_info.next_page_number }}">Next</a>
+    {% endif %}
+</div>
+
+{%endblock%}

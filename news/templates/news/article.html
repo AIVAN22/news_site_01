@@ -1,0 +1,41 @@
+{% extends 'news/main.html' %} {%block content%} {% load static %}
+<style>
+	.full-content-page {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	.title {
+		font-size: 36px;
+		font-weight: bold;
+		text-align: center;
+		width: 60%;
+	}
+	.image {
+		width: 50%;
+		margin: 30px;
+	}
+	.content {
+		width: 90%;
+		font-size: 18px;
+		line-height: 1.5;
+		padding: 30px;
+		display: grid;
+		text-align: center;
+	}
+</style>
+
+<div class="full-content-page">
+	<img
+		style="width: 650px; height: 450px"
+		class="image"
+		src="{% static 'business_images/'|add:news_article.custom_filename|add:'.jpg' %}"
+		alt="{{ image_description }}"
+	/>
+	<h1 class="title">{{ news_article.title }}</h1>
+
+	<div class="content">{{ news_article.content }}</div>
+</div>
+{%endblock%}
