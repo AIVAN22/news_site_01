@@ -19,7 +19,9 @@ Prerequisites
 Python 3.8 or higher
 Django 3.1 or higher
 
-Installation
+Installation:
+
+pip install django
 
 Clone the repository:
 
@@ -27,7 +29,9 @@ git clone https://github.com/AIVAN22/news-website.git
 
 Navigate to the project directory:
 
-cd news-website
+cd news_site
+
+cd news
 
 Run the migrations:
 
