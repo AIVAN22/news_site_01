@@ -25,7 +25,7 @@ pip install django
 
 Clone the repository:
 
-git clone https://github.com/AIVAN22/news-website.git
+git clone https://github.com/AIVAN22/news_site_01.git
 
 Navigate to the project directory:
 
